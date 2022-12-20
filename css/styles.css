@@ -112,7 +112,7 @@ img {
 .logo {
   color: var(--brand-color);
   font-family: 'Raleway', sans-serif;
-  font-weight: 800px; 
+  font-weight: 800;
   font-size: 18px;
   line-height: 1.33;
   letter-spacing: 0.03em;
@@ -156,7 +156,7 @@ img {
  }
  
 .nav-item {
-  margin-right: 40;
+  margin-right: 40px;
  }
 
 .nav-link {
@@ -567,20 +567,24 @@ background-color: #404BBF;
 }
 
 .portfolio-list > .portfolio-item {
- flex-basis: calc((100% - 48) / 3);
+ flex-basis: calc((100% - 48px) / 3);
 } 
 
 
-.portfolio-item:hover,
-.portfolio-item:focus {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
   0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-link {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .portfolio-list .item-decoration {
@@ -671,7 +675,7 @@ transform: translate(0, 0);
 }
 
 .footer-icon-text {
-letter-spacing: 2%; 
+letter-spacing: 0.02em; 
 line-height: 24px;
 margin-bottom: 16px;
 } 
@@ -719,8 +723,12 @@ margin-bottom: 16px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
 }
+
+.backdrop.is-hidden .modal {
+transform: translate(-50%, -50%) scale(1.2);
+} 
+
 
 .modal {
  position: absolute;
@@ -728,9 +736,10 @@ margin-bottom: 16px;
  height: 576px;
  top: 50%;
  left: 50%;
+ 
  transform: translate(-50%, -50%);
  background-color: rgba(252, 252, 252, 1);
- 
+ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-clouse-btn {
